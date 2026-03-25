@@ -1,0 +1,13 @@
+1) Sustituye lib/firebase_options.dart ejecutando: flutterfire configure
+2) Dependencias mínimas:
+   provider, firebase_core, firebase_auth, firebase_database, cloud_firestore, google_fonts
+3) Activa Firebase Authentication (Email/Password)
+4) Usa Realtime Database para salas/partidas y Firestore para ranking/historial
+5) Reglas iniciales RTDB:
+{
+  "rules": {
+    ".read": "auth != null",
+    ".write": "auth != null"
+  }
+}
+6) Reglas iniciales Firestore: lectura autenticada y escritura autenticada.
