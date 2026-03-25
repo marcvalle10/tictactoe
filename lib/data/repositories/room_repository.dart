@@ -401,14 +401,10 @@ class RoomRepository {
   }
 
   Future<void> _persistFinishedGame(GameRoom room) async {
-    final matchRef = _firestore
-        .collection('match_history')
-        .doc('${room.roomCode}_${room.moves.length}');
-
-    final existing = await matchRef.get();
-    if (existing.exists) return;
+    final matchRef = _firestore.collection('match_history').doc();
 
     await matchRef.set({
+      'matchId': matchRef.id,
       'roomCode': room.roomCode,
       'mode': room.mode.key,
       'playerNames': room.players.map((e) => e.name).toList(),
