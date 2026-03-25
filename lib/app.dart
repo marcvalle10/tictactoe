@@ -10,7 +10,7 @@ class TicTacticApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'TicTactic',
+      title: 'TicTacToe',
       theme: AppTheme.darkTheme,
       home: const HomeGate(),
     );
